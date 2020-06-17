@@ -27,6 +27,14 @@ def result(request):
             elif(onedone==1):
                 name2=i
                 os.rename('check/'+i,'check/file2.txt')
+        if('pdf' in i):
+            if(onedone==0):
+                name1=i
+                os.rename('check/'+i,'check/file1.txt')
+                onedone=1
+            elif(onedone==1):
+                name2=i
+                os.rename('check/'+i,'check/file2.txt')
     
 
 
@@ -75,6 +83,14 @@ def result(request):
     onedone=0
     for i in list_files:
         if('txt' in i):
+            if(onedone==0):
+                
+                os.rename('check/file1.txt','check/'+name1)
+                onedone=1
+            elif(onedone==1):
+                name2=i
+                os.rename('check/file2.txt','check/'+name2)
+        if('pdf' in i):
             if(onedone==0):
                 
                 os.rename('check/file1.txt','check/'+name1)
